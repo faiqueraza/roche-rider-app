@@ -1,0 +1,58 @@
+{
+  "expo": {
+    "name": "Sample Tracking App",
+    "slug": "roche-rider-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFFFFF"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "config": {
+        "googleMapsApiKey": "AIzaSyBYSaFO3FMBDfUj7weAYdpiv6_jvJuUD50"
+      }
+    },
+    "android": {
+      "package": "com.mfaiq.riderapp",
+      "softwareKeyboardLayoutMode": "adjustResize",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "CAMERA"
+      ],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBYSaFO3FMBDfUj7weAYdpiv6_jvJuUD50"
+        }
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4b4490b7-f574-494f-894f-3d44036bde2b"
+      }
+    },
+    "plugins": [
+      "expo-font",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to upload proof of delivery.",
+          "cameraPermission": "The app accesses your camera to capture handover photos."
+        }
+      ]
+    ]
+  }
+}
