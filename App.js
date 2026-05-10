@@ -20,6 +20,8 @@ import ProfileScreen from './src/screens/ProfileScreen';
 import IssueChatScreen from './src/screens/IssueChatScreen';
 import LiveChatBot from './src/components/LiveChatBot';
 
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -75,12 +77,14 @@ const Navigation = () => {
 
 export default function App() {
   return (
-    <CustomAlertProvider>
-      <AuthProvider>
-        <StatusBar style="light" />
-        <Navigation />
-        <LiveChatBot />
-      </AuthProvider>
-    </CustomAlertProvider>
+    <SafeAreaProvider>
+      <CustomAlertProvider>
+        <AuthProvider>
+          <StatusBar style="light" />
+          <Navigation />
+          <LiveChatBot />
+        </AuthProvider>
+      </CustomAlertProvider>
+    </SafeAreaProvider>
   );
 }
