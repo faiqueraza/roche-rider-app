@@ -145,6 +145,7 @@ const MapScreen = ({ navigation }) => {
       <MapView
         ref={mapRef}
         provider={PROVIDER_GOOGLE}
+        googleMapsApiKey="AIzaSyBYSaFO3FMBDfUj7weAYdpiv6_jvJuUD50" // Explicit for web
         style={StyleSheet.absoluteFill}
         initialRegion={{ latitude: 30.3753, longitude: 69.3451, latitudeDelta: 15, longitudeDelta: 15 }}
         showsUserLocation={false} // Force false to hide blue dot
