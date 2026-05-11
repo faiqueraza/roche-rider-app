@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   View, StyleSheet, TouchableOpacity,
-  Modal, SafeAreaView, Text,
+  Modal, SafeAreaView, Text, Platform
 } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { MessageCircle, X, ChevronDown } from 'lucide-react-native';
@@ -51,14 +51,17 @@ const LiveChatBot = () => {
             </Text>
           </View>
 
-          {/* Clean Odoo live chat page — no injection */}
-          <WebView
-            source={{ uri: 'https://sample-transfer-app.odoo.com/im_livechat/support/1' }}
-            style={{ flex: 1 }}
-            javaScriptEnabled={true}
-            domStorageEnabled={true}
-            startInLoadingState={true}
-          />
+          <View style={{ flex: 1, paddingBottom: Platform.OS === 'android' ? 20 : 0 }}>
+            <WebView
+              source={{ uri: 'https://sample-transfer-app.odoo.com/im_livechat/support/1' }}
+              style={{ flex: 1 }}
+              javaScriptEnabled={true}
+              domStorageEnabled={true}
+              startInLoadingState={true}
+              scalesPageToFit={false}
+              automaticallyAdjustContentInsets={false}
+            />
+          </View>
         </SafeAreaView>
       </Modal>
     </>
