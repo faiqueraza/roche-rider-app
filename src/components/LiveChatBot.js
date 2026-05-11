@@ -51,15 +51,15 @@ const LiveChatBot = () => {
             </Text>
           </View>
 
-          <View style={{ flex: 1, paddingBottom: Platform.OS === 'android' ? 20 : 0 }}>
+          <View style={{ flex: 1, paddingBottom: Platform.OS === 'android' ? 10 : 0 }}>
             <WebView
               source={{ uri: 'https://sample-transfer-app.odoo.com/im_livechat/support/1' }}
               style={{ flex: 1 }}
               javaScriptEnabled={true}
               domStorageEnabled={true}
               startInLoadingState={true}
-              scalesPageToFit={false}
-              automaticallyAdjustContentInsets={false}
+              scalesPageToFit={true}
+              userAgent="Mozilla/5.0 (Linux; Android 10; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Mobile Safari/537.36"
             />
           </View>
         </SafeAreaView>
